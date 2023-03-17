@@ -132,7 +132,7 @@ for(iter in 1:length(K1_list)){
                          precision_prior_logtau= precision_prior_logtau,
                          precision_prior_mu = precision_prior_mu)
     
-    model.fit.fixRatio <- jags.model(file="m3_noscale_indp.txt",
+    model.fit.fixRatio <- jags.model(file="m3_indp.txt",
                                      data=data_for_jags,
                                      n.chains = 2)
     update(model.fit.fixRatio, 50000)
@@ -194,7 +194,7 @@ for(iter in 1:length(K1_list)){
     numFalsePositive_laplace[iter,sim] = sum(ifRelevant_laplace[(K1+1):K]-varStatus[(K1+1):K])
     #-----------------------------------------------------#
     # mu = 0
-    model2.nomu.indp <- jags.model(file="m3_noscale_indp_mu0.txt",
+    model2.nomu.indp <- jags.model(file="m3_indp_mu0.txt",
                                    data=data_for_jags,
                                    n.chains = 2)
     
